@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!--Main Part-->
+    
+    <div class="container">
+        <h2>Contact With Us</h2>
+        <form action="" class="m-2 p-3 w-50">
+            <div class="mb-3">
+                <label for="">Name</label>
+                <input type="text" placeholder="Enter Your Name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input type="email" placeholder="Enter Your Email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Your Message</label>
+                <textarea style="height: 150px;" name="" id="" cols="30" rows="10" class="form-control" placeholder="Your message here"></textarea>
+            </div>
+            <div class="form-text">We'll never share your email with anyone else.</div>
+            <button class="btn btn-outline-success">Submit</button>
+        </form>
+    </div>
+    <hr>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container card-section">
+        <div class="title text-left mb-3">
+            <h3 class="font-weight-bolder">Check your medical condition with Computer Vision(A machine learning approach)</h3>
+            <p>
+                This is a machine-learning project work to help you detect cancers and other diseases. To know more contact us.
+            </p>
+        </div>
+    </div>
+    <div id="about_card">
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="{{url_for('static', filename= '/images/colon.jpg')}}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h5>Colon Cancer</h5>
+                        <h6>Accept Histopathological Images</h6>
+                    </div>
+                    <form method="POST" action="/">
+                        <input type="submit" name="test_type" value="Check Your Result: Colon Cancer" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="{{url_for('static', filename= 'images/brain Tumor.jpg')}}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h5>Brain Tumor Detection</h5>
+                        <h6>Accept Brain MRI images</h6>
+                    </div>
+                    <form method="POST" action="/">
+                        <input type="submit" name="test_type" value="Check Your Result: Brain Tumor" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="{{url_for('static', filename= 'images/brain_tumor_type.jpg')}}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h5>Types of Brain Tumor</h5>
+                        <h6>Accept Brain MRI images</h6>
+                    </div>
+                    <form method="POST" action="/">
+                        <input type="submit" name="test_type" value="Check Your Result:Type of Tumor" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+{%endblock%}

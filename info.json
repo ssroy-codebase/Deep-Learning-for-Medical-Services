@@ -1,0 +1,11 @@
+{
+  "params" :
+  {
+     "Covid19": "Covid19 VS Pneumonia VS Normal",
+      "Colon": "Adenocarcinoma VS Benign",
+      "Lung": "Adenocarcinoma VS Squamous VS Bening",
+      "Brain_binary": "Normal VS Tumor",
+      "alzheimer": "Mild_Demented VS Moderate Demented VS Non_Demented VS Very Mild",
+      "Brain_multiclass": "Glioma VS Meningioma VS Pituitary VS No Tumor"
+  }
+}
