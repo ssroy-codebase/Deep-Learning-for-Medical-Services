@@ -20,10 +20,12 @@ def model_predict(img_path, model):
 
 
 def make_prediction(type, file_path):
+    # print(type,file_path)
     if type == "ColonCancer":
         model = load_model(MODEL_PATH_colon)
         preds = model_predict(file_path, model)  # 'Colon Adenocarcinoma': 0, 'Colon Benign': 1
         result = predict_colon(preds)
+        return result
 
     elif type == "BrainTumorType":
         model = load_model(MODEL_PATH_bm)
@@ -31,13 +33,13 @@ def make_prediction(type, file_path):
         # pred_class = preds.argmax(axis=-1)
         pred_class = np.argmax(preds.numpy())
         result = predict_bm(pred_class)
+        return result
 
     elif type == "BrainTumor":
         model = load_model(MODEL_PATH_bb)
         preds = model_predict(file_path, model)  # 'no': 0, 'yes': 1
         result = predict_bb(preds)
-
-    return result
+        return result
 
 
 def predict_bb(pred_class):

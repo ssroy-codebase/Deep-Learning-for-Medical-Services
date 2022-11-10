@@ -1,8 +1,22 @@
 {% extends "layout.html" %}
 {% block body %}
     <!--Main Part-->
+
     <div class="container">
         <form id="upload-file" method="post" enctype="multipart/form-data">
+            <h4>
+                This model can classify
+                {% if test_type == "BrainTumor"%}
+                    Normal VS Tumor from Brain MRI.
+                {% elif test_type == "TypeofTumor" %}
+                    Glioma VS Meningioma VS Pituitary VS No Tumor from Brain MRI.
+                {% elif test_type == "ColonCancer" %}
+                    Adenocarcinoma VS Benign from histopathological image of colorectal Cancer.
+                {% else %}
+                    3 types of cancer tissue. Please check
+                <a href="/">home page.<a>
+                {% endif %}
+            </h4>
             <label for="imageUpload" class="upload-label">
                 Choose...
             </label>

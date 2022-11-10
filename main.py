@@ -18,8 +18,7 @@ def home():
 
 @app.route("/result/<string:test_type>",methods=['GET'])
 def result(test_type):
-
-    return render_template('result.html')
+    return render_template('result.html',test_type= test_type)
 
 @app.route("/about")
 def about():
