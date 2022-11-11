@@ -153,3 +153,36 @@ body {
     border-top: 13px solid rgb(165, 177, 165);   
     text-align: center;
 }
+
+/* Main Header */
+.main_header_left {
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main_header_left p {
+    font-size: 2rem;
+}
+
+.main_header_left p h1 {
+    font-size: 4rem;
+    margin: 1rem 0 4rem 0;
+    text-transform: capitalize;
+}
+
+.main_header_left button {
+    font-size: 2rem;
+}
+
+.main_header_left .text_color {
+    color: rgb(255, 0, 0);
+}
+
+.main_header_right {
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
