@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing import image
 MODEL_PATH_colon = os.path.join(os.getcwd(), 'models', 'colon.h5')
 MODEL_PATH_bb = os.path.join(os.getcwd(), 'models', 'brain_binary.h5')
 MODEL_PATH_bm = os.path.join(os.getcwd(), 'models', 'brain_multiclass.h5')
-
+model_random = os.path.join(os.getcwd(), 'models', 'random.h5')
 
 def model_predict(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))
@@ -20,12 +20,20 @@ def model_predict(img_path, model):
 
 
 def make_prediction(type, file_path):
+    model = load_model(model_random)
+    preds = model_predict(file_path, model)  
+    result = predict_random(preds)
+    if result == "Random":
+        im_type = 'Random'
+    else:
+        im_type = 'medical'
+
     # print(type,file_path)
     if type == "ColonCancer":
         model = load_model(MODEL_PATH_colon)
         preds = model_predict(file_path, model)  # 'Colon Adenocarcinoma': 0, 'Colon Benign': 1
         result = predict_colon(preds)
-        return result
+        return result,im_type
 
     elif type == "BrainTumorType":
         model = load_model(MODEL_PATH_bm)
@@ -33,13 +41,13 @@ def make_prediction(type, file_path):
         # pred_class = preds.argmax(axis=-1)
         pred_class = np.argmax(preds.numpy())
         result = predict_bm(pred_class)
-        return result
+        return result,im_type
 
     elif type == "BrainTumor":
         model = load_model(MODEL_PATH_bb)
         preds = model_predict(file_path, model)  # 'no': 0, 'yes': 1
         result = predict_bb(preds)
-        return result
+        return result,im_type
 
 
 def predict_bb(pred_class):
@@ -65,3 +73,9 @@ def predict_colon(pred_class):
         return 'Benign'
     else:
         return 'Adenocarcinoma'
+
+def predict_random(pred_class):
+    if pred_class > 0.5:
+        return 'Random'
+    else:
+        return 'Medical'

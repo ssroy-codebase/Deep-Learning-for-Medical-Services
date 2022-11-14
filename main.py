@@ -46,7 +46,13 @@ def upload():
 
         result = make_prediction(type, file_path)
         os.remove(file_path)
-        return result
+        if result[1] == "medical":
+            # print(result)
+            return result
+        else:
+            result = result[0] + " Sample is unknown to the model. So prediction can be false."
+            # print(result)
+            return result
     return None
 
 app.run(debug=True)

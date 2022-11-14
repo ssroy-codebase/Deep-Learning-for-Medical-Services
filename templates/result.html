@@ -13,15 +13,20 @@
                                 This model can classify
                                 {% if test_type == "BrainTumor"%}
                                     Normal VS Tumor from Brain MRI.
+                                    {% set fname= 'images/bb.jpg' %}
                                 {% elif test_type == "TypeofTumor" %}
                                     Glioma VS Meningioma VS Pituitary VS No Tumor from Brain MRI.
+                                    {% set fname= 'images/bm.jpg' %}
                                 {% elif test_type == "ColonCancer" %}
                                     Adenocarcinoma VS Benign from histopathological image of colorectal Cancer.
+                                    {% set fname= 'images/cb.jpg' %}
                                 {% else %}
                                     3 types of cancer tissue. Please check
                                 <a href="/">home page.<a>
+                                    {% set fname= 'images/about.jpg' %}
                                 {% endif %}
                             </h4>
+                            
                             <label for="imageUpload" class="upload-label">
                                 Choose...
                             </label>
@@ -46,51 +51,11 @@
                     </div>
                     <div class="col-md-8 col-12 main_header_right">
                         <h3 class="text-center">Sample image should be like this</h3>
-                        <img src="{{url_for('static', filename= 'images/about.jpg')}}" alt="">
+                        <img src="{{url_for('static', filename= fname )}}" alt="not found">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- shuvo dada -->
-    <!-- <div class="container">
-        <form id="upload-file" method="post" enctype="multipart/form-data">
-            <h4>
-                This model can classify
-                {% if test_type == "BrainTumor"%}
-                    Normal VS Tumor from Brain MRI.
-                {% elif test_type == "TypeofTumor" %}
-                    Glioma VS Meningioma VS Pituitary VS No Tumor from Brain MRI.
-                {% elif test_type == "ColonCancer" %}
-                    Adenocarcinoma VS Benign from histopathological image of colorectal Cancer.
-                {% else %}
-                    3 types of cancer tissue. Please check
-                <a href="/">home page.<a>
-                {% endif %}
-            </h4>
-            <label for="imageUpload" class="upload-label">
-                Choose...
-            </label>
-            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
-        </form>
-
-        <div class="image-section" style="display:none;">
-            <div class="img-preview">
-                <div id="imagePreview">
-                </div>
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
-            </div>
-        </div>
-
-        <div class="loader" style="display:none;"></div>
-
-        <h3 id="result">
-            <span> </span>
-        </h3>
-
-    </div> -->
 
 {% endblock %}
