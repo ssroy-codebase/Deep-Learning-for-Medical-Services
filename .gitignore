@@ -13,7 +13,8 @@ ML ENVIRONMENT
 .ipynb_checkpoints/
 # Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,pycharm,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks,pycharm,visualstudiocode
-
+venv/
+venv
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
