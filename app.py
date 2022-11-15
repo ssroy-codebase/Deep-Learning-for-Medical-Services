@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from werkzeug.utils import secure_filename
 from flask import Flask, redirect, url_for, request, render_template
-import os, json
+import os
 from image_classification import make_prediction
 
 app = Flask(__name__)
@@ -29,6 +29,9 @@ def about():
 def contact():
     return render_template('contact.html')
 
+uploads = os.path.join(os.getcwd(), 'uploads')
+if not os.path.exists(uploads):
+    os.makedirs(uploads)
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
