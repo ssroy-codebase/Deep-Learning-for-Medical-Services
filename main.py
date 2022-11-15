@@ -50,9 +50,9 @@ def upload():
             # print(result)
             return result
         else:
-            result = result[0] + " Sample is unknown to the model. So prediction can be false."
+            result = result[0] + ". Sample is unknown to the model. So prediction can be false."
             # print(result)
             return result
     return None
 
-app.run(debug=True)
+app.run(debug=False)
