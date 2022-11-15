@@ -29,10 +29,6 @@ def about():
 def contact():
     return render_template('contact.html')
 
-uploads = os.path.join(os.getcwd(), 'uploads')
-if not os.path.exists(uploads):
-    os.makedirs(uploads)
-
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method== 'GET':
@@ -44,7 +40,7 @@ def upload():
         # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
-            basepath, 'uploads', secure_filename(f.filename))
+            basepath, 'models', secure_filename(f.filename))
         f.save(file_path)
 
         result = make_prediction(type, file_path)
