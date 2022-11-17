@@ -44,7 +44,7 @@ def upload():
         f.save(file_path)
 
         result = make_prediction(type, file_path)
-        os.remove(file_path)
+        # os.remove(file_path)
         if result[1] == "medical":
             # print(result)
             return result
