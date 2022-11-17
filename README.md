@@ -56,7 +56,7 @@ Loss & Accuracy
 
 Evalution Matrix
 
-![losscolon](uploads/bbmat.png)
+![losscolon](uploads/bbmat.PNG)
 
 > Types of brain tumor
 
@@ -66,7 +66,7 @@ Loss & Accuracy
 
 Evalution Matrix
 
-![losscolon](uploads/bmmat.png)
+![losscolon](uploads/bmmat.PNG)
 
 > Colon
 
@@ -76,7 +76,7 @@ Loss & Accuracy
 
 Evalution Matrix
 
-![losscolon](uploads/colonmat.png)
+![losscolon](uploads/colonmat.PNG)
 
 # Conclusion
 
