@@ -38,7 +38,7 @@ requests-oauthlib
 rsa
 scipy
 six
-tb-nightly
+tb-nightly==2.11.0a20221109
 tensorboard
 tensorboard-data-server
 tensorboard-plugin-wit
