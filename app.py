@@ -40,7 +40,7 @@ def upload():
         # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
-            basepath, 'models', secure_filename(f.filename))
+            basepath, 'static/images', secure_filename(f.filename))
         f.save(file_path)
 
         result = make_prediction(type, file_path)
