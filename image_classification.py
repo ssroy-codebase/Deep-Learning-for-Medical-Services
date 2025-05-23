@@ -15,7 +15,7 @@ def model_predict(img_path, model):
     # x = np.true_divide(x, 255)
     x = np.expand_dims(x, axis=0)
     # preds = model.predict(x)
-    preds = model(x)
+    preds = model.predict(x)
     return preds
 
 
